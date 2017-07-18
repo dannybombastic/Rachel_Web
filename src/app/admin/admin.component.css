@@ -1,0 +1,130 @@
+body {
+    float: left;
+    margin-top: 120px;
+}
+
+button {
+    margin-top: 50px;
+}
+
+h3 strong {
+    letter-spacing: 10px;
+}
+
+.tabla {
+    float: right;
+    margin-top: 120px;
+}
+
+#lunes header {
+    margin-bottom: 15px;
+    font-size: 35px;
+    color: #c766ff;
+    letter-spacing: 10px;
+       text-align: center;
+}
+
+#martes header {
+    margin-bottom: 15px;
+    font-size: 35px;
+    color: #c766ff;
+    letter-spacing: 10px;
+       text-align: center;
+}
+
+#miercoles header {
+    margin-bottom: 15px;
+    font-size: 35px;
+    color: #c766ff;
+    letter-spacing: 10px;
+       text-align: center;
+}
+
+#jueves header {
+    margin-bottom: 15px;
+    font-size: 35px;
+    color: #c766ff;
+    letter-spacing: 10px;
+}
+
+#viernes header {
+    margin-bottom: 15px;
+    font-size: 35px;
+    color: #c766ff;
+    letter-spacing: 10px;
+    text-align: center;
+}
+
+#lista_instructores {
+    align-content: center;
+    text-align: center;
+    float: left;
+ 
+  
+}
+
+
+#lista_instructores img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto; 
+    float: left;
+    border-radius: 50%;
+      width: 150px;
+   height: 150px;
+ 
+
+}
+
+#lista_fotos {
+float: left;
+   
+ 
+}
+
+#lista_fotos img {
+     float: left;
+    margin: 15px;
+    border-radius: 50%;
+}
+
+
+#lista_precios{
+
+float: left;
+}
+
+#formulario_retiros{
+margin-left: 25px;
+  
+}
+
+
+
+.carousel-inner {
+    overflow: hidden;
+}
+
+.carousel-item {
+    display: flex !important;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1.2s ease-in-out, visibility 1.2s;
+    z-index: -1;
+    position: absolute;
+}
+
+#mapa{ 
+    background: black;
+   padding: 20px;
+    margin: 10px;
+    outline: solid;
+    outline-color: violet;
+    outline-offset: 2px; 
+}
+
+#mapa footer{
+
+    margin-top: 25px;
+    color: #c766ff;
+}
