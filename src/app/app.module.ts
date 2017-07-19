@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { AdminComponent } from './admin/admin.component';
 import { RetiroComponent } from './retiros/retiro.component';
 import { ScrollToModule } from 'ng2-scroll-to-el';
+import { SemanaComponent } from './semanario/semanario.component'
 
 import { AgmCoreModule } from '@agm/core';
 
@@ -41,6 +42,7 @@ export const firebaseConfig = {
     HomeComponent,
     AdminComponent,
     RetiroComponent,
+    SemanaComponent
 
     
 

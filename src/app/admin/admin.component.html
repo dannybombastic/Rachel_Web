@@ -139,8 +139,7 @@
                                 <div class="card-block">
 
                                     <agm-map   [fullscreenControl]="true"  [mapTypeControl]="true" class="hola" style="height: 250px;" *ngFor="let m of use.position; let i = index" [latitude]=" m.lat" [longitude]="m.lng"
-                                        [zoom]="15" [disableDefaultUI]="false" [zoomControl]="true" [streetViewControl]="true"
-                                        (mapClick)="mapClicked($event)">
+                                        [zoom]="15" [disableDefaultUI]="false" [zoomControl]="true" [streetViewControl]="true">
 
                                         <agm-marker (markerClick)="clickedMarker(m.label, i)" [latitude]="m.lat" [longitude]="m.lng" [visible]="true" [markerDraggable]="m.draggable"
                                             (dragEnd)="markerDragEnd(m, $event)">
@@ -177,8 +176,7 @@
                                 </div>
                                 <div class="card-block">
                                     <agm-map   [fullscreenControl]="true"  [mapTypeControl]="true" class="hola" style="height: 250px;" *ngFor="let m of usa.position; let i = index" [latitude]=" m.lat" [longitude]="m.lng"
-                                        [zoom]="15" [disableDefaultUI]="false" [zoomControl]="true" [streetViewControl]="true"
-                                        (mapClick)="mapClicked($event)">
+                                        [zoom]="15" [disableDefaultUI]="false" [zoomControl]="true" [streetViewControl]="true">
 
                                         <agm-marker (markerClick)="clickedMarker(m.label, i)" [latitude]="m.lat" [longitude]="m.lng" [visible]="true" [markerDraggable]="false"
                                             (dragEnd)="markerDragEnd(m, $event)">
@@ -213,8 +211,7 @@
                                 </div>
                                 <div class="card-block">
                                     <agm-map   [fullscreenControl]="true"   [mapTypeControl]="true" class="hola" style="height: 250px;" *ngFor="let m of use.position; let i = index" [latitude]=" m.lat" [longitude]="m.lng"
-                                        [zoom]="15" [disableDefaultUI]="false" [zoomControl]="true" [streetViewControl]="true"
-                                        (mapClick)="mapClicked($event)">
+                                        [zoom]="15" [disableDefaultUI]="false" [zoomControl]="true" [streetViewControl]="true">
 
                                         <agm-marker (markerClick)="clickedMarker(m.label, i)" [latitude]="m.lat" [longitude]="m.lng" [visible]="true" [markerDraggable]="false"
                                             (dragEnd)="markerDragEnd(m, $event)">
@@ -256,8 +253,7 @@
 
 
                                     <agm-map   [fullscreenControl]="true"  [mapTypeControl]="true" class="hola" style="height: 250px;" *ngFor="let m of use.position; let i = index" [latitude]=" m.lat" [longitude]="m.lng"
-                                        [zoom]="15" [disableDefaultUI]="false" [zoomControl]="true" [streetViewControl]="true"
-                                        (mapClick)="mapClicked($event)">
+                                        [zoom]="15" [disableDefaultUI]="false" [zoomControl]="true" [streetViewControl]="true">
 
                                         <agm-marker (markerClick)="clickedMarker(m.label, i)" [latitude]="m.lat" [longitude]="m.lng" [visible]="true" [markerDraggable]="false"
                                             (dragEnd)="markerDragEnd(m, $event)">
@@ -297,8 +293,7 @@
                                 <div class="card-block">
 
                                     <agm-map  [fullscreenControl]="true"   [mapTypeControl]="true" class="hola" style="height: 250px;" *ngFor="let m of use.position; let i = index" [latitude]=" m.lat" [longitude]="m.lng"
-                                        [zoom]="15" [disableDefaultUI]="false" [zoomControl]="true" [streetViewControl]="true"
-                                        (mapClick)="mapClicked($event)">
+                                        [zoom]="15" [disableDefaultUI]="false" [zoomControl]="true" [streetViewControl]="true">
 
                                         <agm-marker (markerClick)="clickedMarker(m.label, i)" [latitude]="m.lat" [longitude]="m.lng" [visible]="true" [markerDraggable]="false"
                                             (dragEnd)="markerDragEnd(m, $event)">
@@ -334,8 +329,7 @@
                                 <div class="card-block">
 
                                     <agm-map   [fullscreenControl]="true"  [mapTypeControl]="true" class="hola" style="height: 250px;" *ngFor="let m of use.position; let i = index" [latitude]=" m.lat" [longitude]="m.lng"
-                                        [zoom]="15" [disableDefaultUI]="false" [zoomControl]="true" [streetViewControl]="true"
-                                        (mapClick)="mapClicked($event)">
+                                        [zoom]="15" [disableDefaultUI]="false" [zoomControl]="true" [streetViewControl]="true">
 
                                         <agm-marker (markerClick)="clickedMarker(m.label, i)" [latitude]="m.lat" [longitude]="m.lng" [visible]="true" [markerDraggable]="false"
                                             (dragEnd)="markerDragEnd(m, $event)">
@@ -375,8 +369,7 @@
                                         [zoom]="15" [disableDefaultUI]="false" [zoomControl]="true" [streetViewControl]="true"
                                         (mapClick)="mapClicked($event)">
 
-                                        <agm-marker (markerClick)="clickedMarker(m.label, i)" [latitude]="m.lat" [longitude]="m.lng" [visible]="true" [markerDraggable]="false"
-                                            (dragEnd)="markerDragEnd(m, $event)">
+                                        <agm-marker (markerClick)="clickedMarker(m.label, i)" [latitude]="m.lat" [longitude]="m.lng" [visible]="true" [markerDraggable]="false">
 
                                             <agm-info-window>
                                                 <strong>{{ m.label }}</strong>
@@ -615,7 +608,7 @@
 
                                             <ngb-carousel class="image-5" *ngIf="reti.fotos">
                                                 <ng-template class="carousel" ngbSlide *ngFor="let url of reti.fotos">
-                                                    <img src="{{ url }}" width="100%" height="3" alt="Random first slide">
+                                                    <img src="{{ url }}" width="100%" height="300" alt="Random first slide">
                                                     <div class="carousel-caption">
                                                         <h3>First slide label</h3>
                                                         <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
@@ -635,7 +628,7 @@
 
                                             <ngb-carousel class="image-5" *ngIf="reti.fotos_dos">
                                                 <ng-template class="carousel" ngbSlide *ngFor="let url of reti.fotos_dos">
-                                                    <img src="{{ url }}" width="100%" height="3" alt="Random first slide">
+                                                    <img src="{{ url }}" width="100%" height="300" alt="Random first slide">
                                                     <div class="carousel-caption">
                                                         <h3>First slide label</h3>
                                                         <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
@@ -668,7 +661,7 @@
 
                                             <ngb-carousel class="image-5" *ngIf="reti.fotos_tres">
                                                 <ng-template class="carousel" ngbSlide *ngFor="let url of reti.fotos_tres">
-                                                    <img src="{{ url }}" width="100%" height="3" alt="Random first slide">
+                                                    <img src="{{ url }}" width="100%" height="300" alt="Random first slide">
                                                     <div class="carousel-caption">
                                                         <h3>First slide label</h3>
                                                         <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
