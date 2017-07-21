@@ -5,7 +5,8 @@
     <title>Retreat Template</title>
     <meta content="Retreat Template" property="og:title">
     <meta content="Webflow" name="generator">
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+        crossorigin="anonymous">
     <link href="/assets/css/burns-yoga-fitness.webflow.css" rel="stylesheet" type="text/css">
     <script src="https://use.typekit.net/xht6iro.js" type="text/javascript"></script>
     <script type="text/javascript">
@@ -20,302 +21,370 @@
 </head>
 
 
-<div class="body">
+<body class="body-2 justify-content-center">
 
-    <div class="w-container">
-  
-        <div class="justify-content-center">
 
  <img class="image-4" sizes="(max-width: 767px) 100vw, 546px" src="../assets/images/burns-logo-retreats.png" srcset="../assets/images/burns-logo-retreats-p-500.png 500w, ../assets/images/burns-logo-retreats-p-800.png 800w, ../assets/images/burns-logo-retreats.png 1000w"
                 width="546">
-                
+
+
+
+    <div class="container">
+
+      
+
+           
             <div class="row d-flex justify-content-center">
-
-                <div id="lunes" class="col">
-                    <header>MONDAY</header>
-
-                    <ul class="list-unstyled" *ngIf="monday">
-                        <li *ngFor="let use of monday | async">
-                            <div class="card">
-                                <div class="card-header">
-                                 <h3>   {{ use.place }} </h3>
-                                </div>
-                                <div class="card-block">
-
-                                    <agm-map [fullscreenControl]="true" [mapTypeControl]="true" class="hola" style="height: 250px;" *ngFor="let m of use.position; let i = index"
-                                        [latitude]=" m.lat" [longitude]="m.lng" [zoom]="15" [disableDefaultUI]="false" [zoomControl]="true"
-                                        [streetViewControl]="true">
-
-                                        <agm-marker [latitude]="m.lat" [longitude]="m.lng" [visible]="true" [markerDraggable]="m.draggable"
-                                            (dragEnd)="markerDragEnd(m, $event)">
-
-                                            <agm-info-window>
-                                                <strong>{{ m.label }}</strong>
-                                            </agm-info-window>
-
-                                            <agm-circle [latitude]="m.lat" [longitude]="m.lng" [radius]="15" [fillColor]="'red'" [circleDraggable]="false" [editable]="false">
-                                            </agm-circle>
-                                        </agm-marker>
-
-                                    </agm-map>
+             
+                  
 
 
+                        <div id="lunes" class="col-3">
+                           <div id="lunes"> <header  >MONDAY</header></div>
+
+                            <ul class="list-unstyled" *ngIf="monday" >
+                                <li >
+                                    <div class="card" *ngFor="let use of monday | async">
+                                        <div class="card-header justify-content-center">
+                                            <h5> {{ use.place }} </h5>
+                                        </div>
+                                        <div *ngIf="lunes" id="marcos">
+                                            <div class="card-block" style="height: 250px;">
+
+                                                <agm-map  [fullscreenControl]="true" [mapTypeControl]="true" class="hola" style="height: 250px;" *ngFor="let m of use.position; let i = index"
+                                                    [latitude]=" m.lat" [longitude]="m.lng" [zoom]="15" [disableDefaultUI]="false"
+                                                    [zoomControl]="true" [streetViewControl]="true" #pepe>
+
+                                                    <agm-marker [latitude]="m.lat" [longitude]="m.lng" [visible]="true" [markerDraggable]="m.draggable" (dragEnd)="markerDragEnd(m, $event)">
+
+                                                        <agm-info-window>
+                                                            <strong>{{ m.label }}</strong>
+                                                        </agm-info-window>
+
+                                                        <agm-circle [latitude]="m.lat" [longitude]="m.lng" [radius]="15" [fillColor]="'red'" [circleDraggable]="false" [editable]="false">
+                                                        </agm-circle>
+                                                    </agm-marker>
+
+                                                </agm-map>
 
 
-                                    <h4 class="card-title"> {{ use.place }}</h4>
-                                    <h3 class="card-text">{{ use.hour }}</h3>
+ 
+
+
+                                            </div>
+
+                                        </div>
+
+                                        <button [style.margin-top]="'25px'" class="btn btn-primary" (click)="despliegaLunes()" type="button"> See Location </button>
+                                        
                                     
-                                </div>
-                            </div>
-                        </li>
+                                        <h4 class="card-title"> {{ use.place }}</h4>
+                                        <h5 class="card-text">{{ use.hour }}</h5>
+                                    </div>
+                                </li>
 
-                    </ul>
-                </div>
-                <div id="martes" class="col">
-                    <header>TUESDAY</header>
-                    <ul class="list-unstyled" *ngIf="truesday">
-                        <li *ngFor="let usa of truesday | async">
-                            <div class="card">
-                                <div class="card-header">
-                                      <h3>   {{ usa.place }} </h3>
-                                </div>
-                                <div class="card-block">
-                                    <agm-map [fullscreenControl]="true" [mapTypeControl]="true" class="hola" style="height: 250px;" *ngFor="let m of usa.position; let i = index"
-                                        [latitude]=" m.lat" [longitude]="m.lng" [zoom]="15" [disableDefaultUI]="false" [zoomControl]="true"
-                                        [streetViewControl]="true">
+                            </ul>
+                        </div>
 
-                                        <agm-marker [latitude]="m.lat" [longitude]="m.lng" [visible]="true" [markerDraggable]="false"
-                                            (dragEnd)="markerDragEnd(m, $event)">
+                          <div id="martes" class="col-3" >
+                           <div id="martes">  <header>TUESDAY</header></div>
+                            <ul class="list-unstyled" *ngIf="truesday">
+                                <li>
+                                    <div class="card"  *ngFor="let use of truesday | async">
+                                        <div class="card-header">
+                                            <h5> {{ use.place }} </h5>
+                                        </div>
+                                        <div *ngIf="martes" id="marcos">
+                                            <div class="card-block" style="height: 250px;">
 
-                                            <agm-info-window>
-                                                <strong>{{ m.label }}</strong>
-                                            </agm-info-window>
+                                                <agm-map class="myPap" [fullscreenControl]="true" [mapTypeControl]="true" class="hola" style="height: 250px;" *ngFor="let m of use.position; let i = index"
+                                                    [latitude]=" m.lat" [longitude]="m.lng" [zoom]="15" [disableDefaultUI]="false"
+                                                    [zoomControl]="true" [streetViewControl]="true" #pepe>
 
-                                            <agm-circle [latitude]="m.lat" [longitude]="m.lng" [radius]="15" [fillColor]="'red'" [circleDraggable]="false" [editable]="false">
-                                            </agm-circle>
-                                        </agm-marker>
+                                                    <agm-marker [latitude]="m.lat" [longitude]="m.lng" [visible]="true" [markerDraggable]="m.draggable" (dragEnd)="markerDragEnd(m, $event)">
 
-                                    </agm-map>
+                                                        <agm-info-window>
+                                                            <strong>{{ m.label }}</strong>
+                                                        </agm-info-window>
 
+                                                        <agm-circle [latitude]="m.lat" [longitude]="m.lng" [radius]="15" [fillColor]="'red'" [circleDraggable]="false" [editable]="false">
+                                                        </agm-circle>
+                                                    </agm-marker>
 
-                                    <h4 class="card-title"> {{ usa.place }}</h4>
-                                    <h3 class="card-text">{{ usa.hour }}</h3>
-                                   
-                                </div>
-                            </div>
-                        </li>
-
-                    </ul>
-                </div>
-                <div id="miercoles" class="col">
-                    <header>WEDNESDAY</header>
-                    <ul class="list-unstyled" *ngIf="wednesday">
-                        <li *ngFor="let use of wednesday | async">
-                            <div class="card">
-                                <div class="card-header">
-                                       <h3>   {{ use.place }} </h3>
-                                </div>
-                                <div class="card-block">
-                                    <agm-map [fullscreenControl]="true" [mapTypeControl]="true" class="hola" style="height: 250px;" *ngFor="let m of use.position; let i = index"
-                                        [latitude]=" m.lat" [longitude]="m.lng" [zoom]="15" [disableDefaultUI]="false" [zoomControl]="true"
-                                        [streetViewControl]="true">
-
-                                        <agm-marker [latitude]="m.lat" [longitude]="m.lng" [visible]="true" [markerDraggable]="false"
-                                            (dragEnd)="markerDragEnd(m, $event)">
-
-                                            <agm-info-window>
-                                                <strong>{{ m.label }}</strong>
-                                            </agm-info-window>
-
-                                            <agm-circle [latitude]="m.lat" [longitude]="m.lng" [radius]="15" [fillColor]="'red'" [circleDraggable]="false" [editable]="false">
-                                            </agm-circle>
-                                        </agm-marker>
-
-                                    </agm-map>
-
-
-                                    <h4 class="card-title"> {{ use.place }} </h4>
-                                    <h3 class="card-text">{{ use.hour }}</h3>
-                                   
-                                </div>
-                            </div>
-                        </li>
-
-                    </ul>
-                </div>
+                                                </agm-map>
 
 
 
 
 
-                <div id="jueves" class="col">
-                    <header>THURSDAY</header>
-                    <ul class="list-unstyled" *ngIf="thrusday">
-                        <li *ngFor="let use of thrusday | async">
-                            <div class="card">
-                                <div class="card-header">
-                                       <h3>   {{ use.place }} </h3>
-                                </div>
-                                <div class="card-block">
+                                            </div>
+
+                                        </div>
+
+                                        <button [style.margin-top]="'25px'" class="btn btn-primary" (click)="despliegaMartes();" type="button"> See Location </button>
+                                        <h4 class="card-title"> {{ use.place }}</h4>
+                                        <h5 class="card-text">{{ use.hour }}</h5>
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                        
+                        <div  class="col-3" >
+                             <div id="miercoles"> <header>WEDNESDAY</header></div>
+                            <ul class="list-unstyled" *ngIf="wednesday">
+                                <li>
+                                    <div class="card"  *ngFor="let use of wednesday | async">
+                                        <div class="card-header">
+                                            <h5> {{ use.place }} </h5>
+                                        </div>
+                                        <div *ngIf="miercoles" id="marcos">
+                                            <div class="card-block" style="height: 250px;">
+
+                                                <agm-map class="myPap" [fullscreenControl]="true" [mapTypeControl]="true" class="hola" style="height: 250px;" *ngFor="let m of use.position; let i = index"
+                                                    [latitude]=" m.lat" [longitude]="m.lng" [zoom]="15" [disableDefaultUI]="false"
+                                                    [zoomControl]="true" [streetViewControl]="true">
+
+                                                    <agm-marker [latitude]="m.lat" [longitude]="m.lng" [visible]="true" [markerDraggable]="m.draggable" (dragEnd)="markerDragEnd(m, $event)">
+
+                                                        <agm-info-window>
+                                                            <strong>{{ m.label }}</strong>
+                                                        </agm-info-window>
+
+                                                        <agm-circle [latitude]="m.lat" [longitude]="m.lng" [radius]="15" [fillColor]="'red'" [circleDraggable]="false" [editable]="false">
+                                                        </agm-circle>
+                                                    </agm-marker>
+
+                                                </agm-map>
 
 
-                                    <agm-map [fullscreenControl]="true" [mapTypeControl]="true" class="hola" style="height: 250px;" *ngFor="let m of use.position; let i = index"
-                                        [latitude]=" m.lat" [longitude]="m.lng" [zoom]="15" [disableDefaultUI]="false" [zoomControl]="true"
-                                        [streetViewControl]="true">
-
-                                        <agm-marker [latitude]="m.lat" [longitude]="m.lng" [visible]="true" [markerDraggable]="false"
-                                            (dragEnd)="markerDragEnd(m, $event)">
-
-                                            <agm-info-window>
-                                                <strong>{{ m.label }}</strong>
-                                            </agm-info-window>
-
-                                            <agm-circle [latitude]="m.lat" [longitude]="m.lng" [radius]="15" [fillColor]="'red'" [circleDraggable]="false" [editable]="false">
-                                            </agm-circle>
-                                        </agm-marker>
-
-                                    </agm-map>
 
 
-                                    <h4 class="card-title">{{ use.place }}</h4>
-                                    <h3 class="card-text">{{ use.hour }}</h3>
-                                    
-                                </div>
-                            </div>
-                        </li>
 
-                    </ul>
-                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <button [style.margin-top]="'25px'" class="btn btn-primary" (click)="despliegaMiercoles();" type="button"> See Location </button>
+                                        <h4 class="card-title"> {{ use.place }}</h4>
+                                        <h5 class="card-text">{{ use.hour }}</h5>
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                                         <div id="jueves" class="col-3" >
+                        
+  <div id="jueves">  <header>THURSDAY</header></div>
+                            <ul class="list-unstyled" *ngIf="thrusday">
+                                <li >
+                                    <div class="card" *ngFor="let use of thrusday | async">
+                                        <div class="card-header">
+                                            <h5> {{ use.place }} </h5>
+                                        </div>
+                                        <div *ngIf="jueves" id="marcos">
+                                            <div class="card-block" style="height: 250px;">
+
+                                                <agm-map class="myPap" [fullscreenControl]="true" [mapTypeControl]="true" class="hola" style="height: 250px;" *ngFor="let m of use.position; let i = index"
+                                                    [latitude]=" m.lat" [longitude]="m.lng" [zoom]="15" [disableDefaultUI]="false"
+                                                    [zoomControl]="true" [streetViewControl]="true">
+
+                                                    <agm-marker [latitude]="m.lat" [longitude]="m.lng" [visible]="true" [markerDraggable]="m.draggable" (dragEnd)="markerDragEnd(m, $event)">
+
+                                                        <agm-info-window>
+                                                            <strong>{{ m.label }}</strong>
+                                                        </agm-info-window>
+
+                                                        <agm-circle [latitude]="m.lat" [longitude]="m.lng" [radius]="15" [fillColor]="'red'" [circleDraggable]="false" [editable]="false">
+                                                        </agm-circle>
+                                                    </agm-marker>
+
+                                                </agm-map>
+
+
+
+
+
+                                            </div>
+
+                                        </div>
+
+                                        <button [style.margin-top]="'25px'" class="btn btn-primary" (click)="despliegaJueves();" type="button"> See Location </button>
+                                        <h4 class="card-title"> {{ use.place }}</h4>
+                                        <h5 class="card-text">{{ use.hour }}</h5>
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                           <div id="viernes" class="col-3" >
+                        <div id="viernes">    <header>FRIDAY</header></div>
+                            <ul class="list-unstyled" *ngIf="friday">
+                                <li>
+                                    <div class="card" *ngFor="let use of friday | async">
+                                        <div class="card-header">
+                                            <h5> {{ use.place }} </h5>
+                                        </div>
+                                        <div *ngIf="viernes" id="marcos">
+                                            <div class="card-block" style="height: 250px;">
+
+                                                <agm-map class="myPap" [fullscreenControl]="true" [mapTypeControl]="true" class="hola" style="height: 250px;" *ngFor="let m of use.position; let i = index"
+                                                    [latitude]=" m.lat" [longitude]="m.lng" [zoom]="15" [disableDefaultUI]="false"
+                                                    [zoomControl]="true" [streetViewControl]="true">
+
+                                                    <agm-marker [latitude]="m.lat" [longitude]="m.lng" [visible]="true" [markerDraggable]="m.draggable" (dragEnd)="markerDragEnd(m, $event)">
+
+                                                        <agm-info-window>
+                                                            <strong>{{ m.label }}</strong>
+                                                        </agm-info-window>
+
+                                                        <agm-circle [latitude]="m.lat" [longitude]="m.lng" [radius]="15" [fillColor]="'red'" [circleDraggable]="false" [editable]="false">
+                                                        </agm-circle>
+                                                    </agm-marker>
+
+                                                </agm-map>
+
+
+
+
+
+                                            </div>
+
+                                        </div>
+
+                                        <button [style.margin-top]="'25px'" class="btn btn-primary" (click)="despliegaViernes();" type="button"> See Location </button>
+                                        <h4 class="card-title"> {{ use.place }}</h4>
+                                        <h5 class="card-text">{{ use.hour }}</h5>
+                                    </div>
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                         <div id="viernes" class="col-3">
+                            <header>SATURDAY</header>
+                            <ul class="list-unstyled" *ngIf="saturday">
+                                <li>
+                                    <div class="card"  *ngFor="let use of saturday | async">
+                                        <div class="card-header">
+                                            <h5> {{ use.place }} </h5>
+                                        </div>
+                                        <div *ngIf="sabados" id="marcos">
+                                            <div class="card-block" style="height: 250px;">
+
+                                                <agm-map class="myPap" [fullscreenControl]="true" [mapTypeControl]="true" class="hola" style="height: 250px;" *ngFor="let m of use.position; let i = index"
+                                                    [latitude]=" m.lat" [longitude]="m.lng" [zoom]="15" [disableDefaultUI]="false"
+                                                    [zoomControl]="true" [streetViewControl]="true">
+
+                                                    <agm-marker [latitude]="m.lat" [longitude]="m.lng" [visible]="true" [markerDraggable]="m.draggable" (dragEnd)="markerDragEnd(m, $event)">
+
+                                                        <agm-info-window>
+                                                            <strong>{{ m.label }}</strong>
+                                                        </agm-info-window>
+
+                                                        <agm-circle [latitude]="m.lat" [longitude]="m.lng" [radius]="15" [fillColor]="'red'" [circleDraggable]="false" [editable]="false">
+                                                        </agm-circle>
+                                                    </agm-marker>
+
+                                                </agm-map>
+
+
+
+
+
+                                            </div>
+
+                                        </div>
+
+                                        <button [style.margin-top]="'25px'" class="btn btn-primary" (click)="despliegaSabados();" type="button"> See Location </button>
+                                        <h4 class="card-title"> {{ use.place }}</h4>
+                                        <h5 class="card-text">{{ use.hour }}</h5>
+                                    </div>
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                        <div id="viernes" class="col-3">
+                            <header>SUNDAY</header>
+                            <ul class="list-unstyled" *ngIf="sunday">
+                                <li>
+                                    <div class="card" *ngFor="let use of sunday | async">
+                                        <div class="card-header">
+                                            <h5> {{ use.place }} </h5>
+                                        </div>
+                                        <div *ngIf="domingos" id="marcos">
+                                            <div class="card-block" style="height: 250px;">
+
+                                                <agm-map class="myPap" [fullscreenControl]="true" [mapTypeControl]="true" class="hola" style="height: 250px;" *ngFor="let m of use.position; let i = index"
+                                                    [latitude]=" m.lat" [longitude]="m.lng" [zoom]="15" [disableDefaultUI]="false"
+                                                    [zoomControl]="true" [streetViewControl]="true">
+
+                                                    <agm-marker [latitude]="m.lat" [longitude]="m.lng" [visible]="true" [markerDraggable]="m.draggable" (dragEnd)="markerDragEnd(m, $event)">
+
+                                                        <agm-info-window>
+                                                            <strong>{{ m.label }}</strong>
+                                                        </agm-info-window>
+
+                                                        <agm-circle [latitude]="m.lat" [longitude]="m.lng" [radius]="15" [fillColor]="'red'" [circleDraggable]="false" [editable]="false">
+                                                        </agm-circle>
+                                                    </agm-marker>
+
+                                                </agm-map>
+
+
+
+
+
+                                            </div>
+
+                                        </div>
+
+                                        <button [style.margin-top]="'25px'" class="btn btn-primary" (click)="despliegaDomingos();" type="button"> See Location </button>
+                                        <h4 class="card-title"> {{ use.place }}</h4>
+                                        <h5 class="card-text">{{ use.hour }}</h5>
+                                    </div>
+                                </li>
+
+                            </ul>
+
+                        </div>
+
             </div>
 
-            <div class="row d-flex justify-content-center">
-  
-                <div id="viernes" class="col">
-                    <header>FRIDAY</header>
-                    <ul class="list-unstyled" *ngIf="friday">
-                        <li *ngFor="let use of friday | async">
-                            <div class="card">
-                                <div class="card-header">
-                                       <h3>   {{ use.place }} </h3>
-                                </div>
-                                <div class="card-block">
-
-                                    <agm-map [fullscreenControl]="true" [mapTypeControl]="true" class="hola" style="height: 250px;" *ngFor="let m of use.position; let i = index"
-                                        [latitude]=" m.lat" [longitude]="m.lng" [zoom]="15" [disableDefaultUI]="false" [zoomControl]="true"
-                                        [streetViewControl]="true">
-
-                                        <agm-marker [latitude]="m.lat" [longitude]="m.lng" [visible]="true" [markerDraggable]="false"
-                                            (dragEnd)="markerDragEnd(m, $event)">
-
-                                            <agm-info-window>
-                                                <strong>{{ m.label }}</strong>
-                                            </agm-info-window>
-
-                                            <agm-circle [latitude]="m.lat" [longitude]="m.lng" [radius]="15" [fillColor]="'red'" [circleDraggable]="false" [editable]="false">
-                                            </agm-circle>
-                                        </agm-marker>
-
-                                    </agm-map>
-                                    <h4 class="card-title">{{ use.place }}</h4>
-                                    <h3 class="card-text">{{ use.hour }}</h3>
-                                    
-                                </div>
-                            </div>
-                        </li>
-
-                    </ul>
-
-                </div>
-
-                <div id="viernes" class="col">
-                    <header>SATURDAY</header>
-                    <ul class="list-unstyled" *ngIf="saturday">
-                        <li *ngFor="let use of saturday | async">
-                            <div class="card">
-                                <div class="card-header">
-                                       <h3>   {{ use.place }} </h3>
-                                </div>
-                                <div class="card-block">
-
-                                    <agm-map [fullscreenControl]="true" [mapTypeControl]="true" class="hola" style="height: 250px;" *ngFor="let m of use.position; let i = index"
-                                        [latitude]=" m.lat" [longitude]="m.lng" [zoom]="15" [disableDefaultUI]="false" [zoomControl]="true"
-                                        [streetViewControl]="true">
-
-                                        <agm-marker [latitude]="m.lat" [longitude]="m.lng" [visible]="true" [markerDraggable]="false"
-                                            (dragEnd)="markerDragEnd(m, $event)">
-
-                                            <agm-info-window>
-                                                <strong>{{ m.label }}</strong>
-                                            </agm-info-window>
-
-                                            <agm-circle [latitude]="m.lat" [longitude]="m.lng" [radius]="15" [fillColor]="'red'" [circleDraggable]="false" [editable]="false">
-                                            </agm-circle>
-                                        </agm-marker>
-
-                                    </agm-map>
-                                    <h4 class="card-title">{{ use.place }}</h4>
-                                    <h3 class="card-text">{{ use.hour }}</h3>
-                                    
-                                </div>
-                            </div>
-                        </li>
-
-                    </ul>
-
-                </div>
-
-
-                <div id="viernes" class="col">
-                    <header>SUNDAY</header>
-                    <ul class="list-unstyled" *ngIf="sunday">
-                        <li *ngFor="let use of sunday | async">
-                            <div class="card">
-                                <div class="card-header">
-                                      <h3>   {{ use.place }} </h3>
-                                </div>
-                                <div class="card-block">
-
-                                    <agm-map [fullscreenControl]="true" [mapTypeControl]="true" class="hola" style="height: 250px;" *ngFor="let m of use.position; let i = index"
-                                        [latitude]=" m.lat" [longitude]="m.lng" [zoom]="15" [disableDefaultUI]="false" [zoomControl]="true"
-                                        [streetViewControl]="true" (mapClick)="mapClicked($event)">
-
-                                        <agm-marker [latitude]="m.lat" [longitude]="m.lng" [visible]="true" [markerDraggable]="false">
-
-                                            <agm-info-window>
-                                                <strong>{{ m.label }}</strong>
-                                            </agm-info-window>
-
-                                            <agm-circle [latitude]="m.lat" [longitude]="m.lng" [radius]="15" [fillColor]="'red'" [circleDraggable]="false" [editable]="false">
-                                            </agm-circle>
-                                        </agm-marker>
-
-                                    </agm-map>
-                                    <h4 class="card-title">{{ use.place }}</h4>
-                                    <h3 class="card-text">{{ use.hour }}</h3>
-                                    
-                                </div>
-                            </div>
-                        </li>
-
-                    </ul>
-
-                </div>
+       
+                                 
 
 
 
 
 
 
-            </div>
 
 
+        
 
-
-        </div>
-
+            
+     
     </div>
 
-    <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
-</div>
+</body>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+    crossorigin="anonymous"></script>
+<!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
+
 
 </html>

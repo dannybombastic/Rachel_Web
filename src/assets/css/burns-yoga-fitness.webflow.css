@@ -1433,11 +1433,13 @@ margin-right: 550px;
 }
 
 .body-2 {
+
   background-image: url('/assets/images/background.gif');
   background-position: 0px 0px;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+ 
 }
 
 .image-6 {
